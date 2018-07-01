@@ -10,11 +10,11 @@
  */
 {
 	var page_2 = scrollMonitor.create( document.querySelector('#test') );
-	var hero = scrollMonitor.create( document.querySelector('.hero') );
+	var hero = scrollMonitor.create( document.querySelector('#hero') );
 	var hero_trigger = scrollMonitor.create( document.querySelector('#hero-trigger') );
 
 	const DOM = {};
-	DOM.hero = document.querySelector('.hero');
+	DOM.hero = document.querySelector('#hero');
 	DOM.shape = DOM.hero.querySelector('svg.shape');
 	DOM.path = DOM.shape.querySelector('path');
 	DOM.enter = document.querySelector('.enter');
@@ -34,7 +34,8 @@
 		}
 	};
 
-	page_2.enterViewport(function(event) {
+	// scroll down
+	hero_trigger.exitViewport(function(event) {
 		anime({
 			targets: DOM.hero,
 			duration: 1000,
@@ -52,22 +53,23 @@
 		anime({
 			targets: DOM.path,
 			duration: 1000,
-			easing: 'easeInOutQuad',
+			easing: 'easeInOutSine',
 			d: DOM.path.getAttribute('pathdata:id')
 		});
 		anime({
 			targets: '#test',
 			duration: 1000,
-			delay:500,
+			delay:700,
 			easing: 'easeOutCubic',
-			translateY: '-15vw',
+			translateY: '-150px',
 			opacity: [
 				{value: 1, duration: 1000, easing: 'linear'}
 			],
 		})
 	})
 
-	hero.fullyEnterViewport(function(event) {
+	//scroll up
+	hero_trigger.enterViewport(function(event) {
 		anime({
 			targets: '#test',
 			duration: 500,
@@ -83,6 +85,13 @@
 			easing: 'easeInOutCubic',
 			translateY: '0'
 		});
+
+		anime({
+			targets: DOM.path,
+			duration: 1100,
+			easing: 'easeInOutSine',
+			d: DOM.path.getAttribute('d')
+		});
 		
 		anime({
 			targets: DOM.shape,
@@ -92,12 +101,7 @@
 			]
 		});
 
-		anime({
-			targets: DOM.path,
-			duration: 1100,
-			easing: 'easeInOutSine',
-			d: DOM.path.getAttribute('pathdata:id')
-		});
+		
 	})
 
 	let isActive;
@@ -109,9 +113,9 @@
 		anime({
 			targets: DOM.enterLetters,
 			delay: (t,i) => i*15,
-			translateX: [
-				{value: 1, duration: 150, easing: 'easeInQuad'},
-				{value: [-1,0], duration: 150, easing: 'easeOutQuad'}
+			translateY: [
+				{value: 10, duration: 150, easing: 'easeInQuad'},
+				{value: [-10,0], duration: 150, easing: 'easeOutQuad'}
 			],
 			opacity: [
 				{value: 0, duration: 150, easing: 'linear'},
@@ -134,9 +138,9 @@
 		anime({
 			targets: DOM.enterLetters,
 			delay: (t,i,l) => (l-i-1)*15,
-			translateX: [
-				{value: 1, duration: 150, easing: 'easeInQuad'},
-				{value: [-1,0], duration: 150, easing: 'easeOutQuad'}
+			translateY: [
+				{value: 10, duration: 150, easing: 'easeInQuad'},
+				{value: [-10,0], duration: 150, easing: 'easeOutQuad'}
 			],
 			opacity: [
 				{value: 0, duration: 150, easing: 'linear'},
