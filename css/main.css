@@ -1,0 +1,93 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  width: 100%;
+  background-color: black;
+}
+
+.hero-text {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  display: flex;
+  color:white;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text h1 {
+  font-family: 'Futura';
+  font-weight: 600;
+  font-size: 10vw;
+}
+
+section {
+  font-size: 1.3em;
+}
+
+.shape {
+  height: 100vh;
+  width: 100%;
+  display: block;
+  fill:black;
+}
+
+@media screen and (max-width: 50em) {
+  .frame {
+    z-index: 1000;
+    display: block;
+    padding: 0.85em 0;
+  }
+  .demos {
+    font-size: 0.85em;
+    padding: 0 0.25em;
+  }
+  .codrops-header {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5em;
+  }
+  .codrops-header__title {
+    font-weight: bold;
+    padding-bottom: 0.25em;
+    text-align: center;
+  }
+  .github {
+    display: none;
+  }
+  .codrops-links {
+    margin: 0;
+  }
+  .content--intro .content__inner,
+  .demo-4 .content__inner {
+    padding-top: 12em;
+  }
+  .content__title {
+    font-size: 2em;
+  }
+  .demo {
+    padding: 0;
+    margin: 0;
+  }
+  .menu__item {
+    margin: 0.5em 0;
+    font-size: 1.5em;
+  }
+  .content__text {
+    padding: 1em;
+    font-size: 1em;
+  }
+  .next-demo {
+    position: relative;
+  }
+}
