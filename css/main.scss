@@ -1,0 +1,95 @@
+$hero-back-color: black;
+$tedx-red: #E62B1E;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+#hero {
+  height: 110vh;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  background-color: $hero-back-color;
+  .hero-text {
+    height: 80vh;
+    position: relative;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top:100px;
+    h3, h4 {
+      letter-spacing: 2px;
+      font-size: 1.5vw;
+      font-weight: 400;
+    }
+    img {
+      height:6vw;
+    }
+  }
+}
+
+nav {
+  ul {
+    font-weight: 600;
+    display:flex;
+    z-index: 2;
+    padding-top:20px;
+    padding-bottom:10px;
+    padding-right:50px;
+    padding-left:50px;
+    list-style: none;
+    align-items:center;
+    text-align:center;
+    font-size: 15px;
+    position:fixed;
+    width:100%;
+    color: $tedx-red;
+    background-color: black;
+
+    span {
+      flex:4;
+    }
+    li {
+      flex:1;
+      padding:0 10px;
+      a {
+        color: $tedx-red;
+        text-decoration: none;
+        padding:10px 25px;
+      }
+    }
+
+    #attend {
+      background-color: $tedx-red;
+      color:white !important;
+    }
+
+    img {
+      height:3em;
+      padding-top:10px;
+    }
+  }
+
+}
+
+
+
+section {
+  font-size: 1.3em;
+}
+
+.shape {
+  height: 100vh;
+  width: 100%;
+  display: block;
+  fill: $hero-back-color;
+}
+
+@media screen and (max-width: 50em) {
+  
+}

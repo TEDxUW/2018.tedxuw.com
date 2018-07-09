@@ -28,47 +28,48 @@
 		imagesLoaded(document.body, {background: true} , () => document.body.classList.remove('loading'));
 		DOM.enter.addEventListener('mouseenter', enterHoverInFn);
 		DOM.enter.addEventListener('mouseleave', enterHoverOutFn);
-		window.resize = function() {
-			scrollMonitor.update();
-			scrollMonitor.recalculateLocations();
-		}
 	};
 
 	// scroll down
 	hero_trigger.exitViewport(function(event) {
+		document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
 		anime({
 			targets: DOM.hero,
-			duration: 1000,
+			duration: 1200,
 			easing: 'easeInOutSine',
-			translateY: '-100vh'
+			translateY: '-80vh'
+		}).finished.then(function() {
+			document.getElementsByTagName("BODY")[0].style.overflow = "visible";
 		});
-		
+
 		anime({
 			targets: DOM.shape,
 			scaleY: [
-				{value:0.5,duration: 550,easing: 'easeInOutCubic'},
-				{value:1,duration: 550, easing: 'easeInOutCubic'}
+				{value:[0.8,1.8],duration: 550,easing: 'easeInOutSine'},
+				{value:1,duration: 550,easing: 'easeInOutSine'}
 			]
 		});
+		
 		anime({
 			targets: DOM.path,
-			duration: 1000,
+			duration: 500,
 			easing: 'easeInOutSine',
 			d: DOM.path.getAttribute('pathdata:id')
 		});
+
 		anime({
 			targets: '#test',
 			duration: 1000,
 			delay:700,
 			easing: 'easeOutCubic',
-			translateY: '-150px',
+			translateY: '-30vh',
 			opacity: [
 				{value: 1, duration: 1000, easing: 'linear'}
 			],
-		})
+		});
 	})
 
-	//scroll up
+	// scroll up
 	hero_trigger.enterViewport(function(event) {
 		anime({
 			targets: '#test',
