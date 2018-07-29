@@ -1,5 +1,5 @@
 /**
- * demo1.js
+ * demo.js
  * http://www.codrops.com
  *
  * Licensed under the MIT license.
@@ -8,152 +8,121 @@
  * Copyright 2017, Codrops
  * http://www.codrops.com
  */
-{
-	var page_2 = scrollMonitor.create( document.querySelector('#test') );
-	var hero = scrollMonitor.create( document.querySelector('#hero') );
-	var hero_trigger = scrollMonitor.create( document.querySelector('#hero-trigger') );
 
-	const DOM = {};
-	DOM.hero = document.querySelector('#hero');
-	DOM.shape = DOM.hero.querySelector('svg.shape');
-	DOM.path = DOM.shape.querySelector('path');
-	DOM.enter = document.querySelector('.enter');
-	
-	charming(DOM.enter);
-	DOM.enterLetters = Array.from(DOM.enter.querySelectorAll('span'));
-	// Set the SVG transform origin.
-	DOM.shape.style.transformOrigin = '50% 0%';
+class ShapeOverlays {
+  constructor(elm) {
+    this.elm = elm;
+    this.path = elm.querySelectorAll('path');
+    this.numPoints = 3;
+    this.duration = 800;
+    this.delayPointsArray = [];
+    this.delayPointsMax = 100;
+    this.delayPerPath = 80;
+    this.timeStart = Date.now();
+    this.isOpened = false;
+    this.isAnimating = false;
+  }
 
-	const init = () => {
-		imagesLoaded(document.body, {background: true} , () => document.body.classList.remove('loading'));
-		DOM.enter.addEventListener('mouseenter', enterHoverInFn);
-		DOM.enter.addEventListener('mouseleave', enterHoverOutFn);
-	};
+  toggle() {
+    this.isAnimating = true;
+    const range = Math.random() * Math.PI * 2;
+    for (var i = 0; i < this.numPoints; i++) {
+      const radian = (i / (this.numPoints - 1)) * Math.PI * 2;
+      this.delayPointsArray[i] = (Math.sin(radian + range) + 1) / 2 * this.delayPointsMax;
+    }
+    if (this.isOpened === false) {
+      this.open();
+    } else {
+      this.close();
+    }
+  }
 
-	// scroll down
-	hero_trigger.exitViewport(function(event) {
-		document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
-		anime({
-			targets: DOM.hero,
-			duration: 1200,
-			easing: 'easeInOutSine',
-			translateY: '-80vh'
-		}).finished.then(function() {
-			document.getElementsByTagName("BODY")[0].style.overflow = "visible";
-		});
+  open() {
+    this.isOpened = true;
+    this.elm.classList.add('is-opened');
+    this.timeStart = Date.now();
+    this.renderLoop();
+  }
 
-		anime({
-			targets: DOM.shape,
-			scaleY: [
-				{value:[0.8,1.8],duration: 550,easing: 'easeInOutSine'},
-				{value:1,duration: 550,easing: 'easeInOutSine'}
-			]
-		});
-		
-		anime({
-			targets: DOM.path,
-			duration: 500,
-			easing: 'easeInOutSine',
-			d: DOM.path.getAttribute('pathdata:id')
-		});
+  close() {
+    this.isOpened = false;
+    this.elm.classList.remove('is-opened');
+    this.timeStart = Date.now();
+    this.renderLoop();
+  }
 
-		anime({
-			targets: '#test',
-			duration: 1000,
-			delay:700,
-			easing: 'easeOutCubic',
-			translateY: '-30vh',
-			opacity: [
-				{value: 1, duration: 1000, easing: 'linear'}
-			],
-		});
-	})
+  updatePath(time) {
+    const points = [];
+    for (var i = 0; i < this.numPoints; i++) {
+      points[i] = ease.cubicInOut(Math.min(Math.max(time - this.delayPointsArray[i], 0) / this.duration, 1)) * 100
+    }
 
-	// scroll up
-	hero_trigger.enterViewport(function(event) {
-		anime({
-			targets: '#test',
-			duration: 500,
-			easing: 'easeInCubic',
-			translateY: '0',
-			opacity: [
-				{value: 0, duration: 500, easing: 'linear'}
-			],
-		})
-		anime({
-			targets: DOM.hero,
-			duration: 1000,
-			easing: 'easeInOutCubic',
-			translateY: '0'
-		});
+    let str = '';
+    str += (this.isOpened) ? `M 0 0 V ${points[0]} ` : `M 0 ${points[0]} `;
+    for (var i = 0; i < this.numPoints - 1; i++) {
+      const p = (i + 1) / (this.numPoints - 1) * 100;
+      const cp = p - (1 / (this.numPoints - 1) * 100) / 2;
+      str += `C ${cp} ${points[i]} ${cp} ${points[i + 1]} ${p} ${points[i + 1]} `;
+    }
+    str += (this.isOpened) ? `V 0 H 0` : `V 100 H 0`;
+    return str;
+  }
 
-		anime({
-			targets: DOM.path,
-			duration: 1100,
-			easing: 'easeInOutSine',
-			d: DOM.path.getAttribute('d')
-		});
-		
-		anime({
-			targets: DOM.shape,
-			scaleY: [
-				{value:1,duration: 550,easing: 'easeInOutCubic'},
-				{value:0,duration: 550, easing: 'easeInOutCubic'}
-			]
-		});
+  render() {
+    if (this.isOpened) {
+      for (var i = 0; i < this.path.length; i++) {
+        this.path[i].setAttribute('d', this.updatePath(Date.now() - (this.timeStart + this.delayPerPath * i)));
+      }
+    } else {
+      for (var i = 0; i < this.path.length; i++) {
+        this.path[i].setAttribute('d', this.updatePath(Date.now() - (this.timeStart + this.delayPerPath * (this.path.length - i - 1))));
+      }
+    }
+  }
 
-		
-	})
+  renderLoop() {
+    this.render();
+    if (Date.now() - this.timeStart < this.duration + this.delayPerPath * (this.path.length - 1) + this.delayPointsMax) {
+      requestAnimationFrame(() => {
+        this.renderLoop();
+      });
+    }
+    else {
+      this.isAnimating = false;
+    }
+  }
+}
 
-	let isActive;
-	let enterTimeout;
+const hero = document.querySelector('header');
+const elmOverlay = document.querySelector('.shape-overlays');
+var overlay = new ShapeOverlays(elmOverlay);
 
-	const enterHoverInFn = () => enterTimeout = setTimeout(() => {
-		isActive = true;
-		anime.remove(DOM.enterLetters);
-		anime({
-			targets: DOM.enterLetters,
-			delay: (t,i) => i*15,
-			translateY: [
-				{value: 10, duration: 150, easing: 'easeInQuad'},
-				{value: [-10,0], duration: 150, easing: 'easeOutQuad'}
-			],
-			opacity: [
-				{value: 0, duration: 150, easing: 'linear'},
-				{value: 1, duration: 150, easing: 'linear'}
-			],
-			color: {
-				value: '#E81515',
-				duration: 1,
-				delay: (t,i,l) => i*15+150
-			}
-		});
-	}, 50);
+setTimeout(() => document.querySelector('.preload').classList.add('render'), 800);
 
-	const enterHoverOutFn = () => {
-		clearTimeout(enterTimeout);
-		if( !isActive ) return;
-		isActive = false;
+var toggleWave = function() {
+  if (overlay.isAnimating) {
+    return false;
+  }
+  overlay.toggle();
+  if (overlay.isOpened === true) {
+      hero.classList.add('is-opened');
+  } else {
+      hero.classList.remove('is-opened');
+  }
+}
 
-		anime.remove(DOM.enterLetters);
-		anime({
-			targets: DOM.enterLetters,
-			delay: (t,i,l) => (l-i-1)*15,
-			translateY: [
-				{value: 10, duration: 150, easing: 'easeInQuad'},
-				{value: [-10,0], duration: 150, easing: 'easeOutQuad'}
-			],
-			opacity: [
-				{value: 0, duration: 150, easing: 'linear'},
-				{value: 1, duration: 150, easing: 'linear'}
-			],
-			color: {
-				value: 'inherit',
-				duration: 1,
-				delay: (t,i,l) => (l-i-1)*15+150
-			}
-		});
-	};
+$(document).ready(function() {
+  $('#hero').fadeIn();
+  $('#home').fadeIn();
+  toggleWave();
+  
+  $('nav a, .pages a').click(function(event) {
+    $('html,body').animate({ scrollTop: 0 }, "fast");;
+    $('section').fadeOut(200)
+    
+    $('#' + event.currentTarget.name).delay(200).fadeIn(400);
+  });
+  
+});
 
-	init();
-};
+
