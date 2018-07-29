@@ -93,6 +93,7 @@ class ShapeOverlays {
   }
 }
 
+const footer_trigger = scrollMonitor.create(document.querySelector('#footer-trigger'));
 const hero = document.querySelector('header');
 const elmOverlay = document.querySelector('.shape-overlays');
 var overlay = new ShapeOverlays(elmOverlay);
@@ -112,15 +113,18 @@ var toggleWave = function() {
 }
 
 $(document).ready(function() {
-  $('#hero').fadeIn();
-  $('#home').fadeIn();
   toggleWave();
   
   $('nav a, .pages a').click(function(event) {
     $('html,body').animate({ scrollTop: 0 }, "fast");;
-    $('section').fadeOut(200)
-    
+    $('section').fadeOut(200);
+    $('footer').hide();
     $('#' + event.currentTarget.name).delay(200).fadeIn(400);
+  });
+
+  footer_trigger.enterViewport(function() {
+    console.log("hi");
+    $('footer').fadeIn();
   });
   
 });

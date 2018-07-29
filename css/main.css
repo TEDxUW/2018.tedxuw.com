@@ -44,6 +44,11 @@ nav ul img {
   left: 10px;
 }
 
+#home {
+  top: 20vh;
+  margin-bottom: 30vh !important;
+}
+
 main {
   z-index: -1;
   top: 20vh;
@@ -59,6 +64,9 @@ main {
   to {
     opacity: 1;
   }
+}
+main section {
+  display: none;
 }
 
 body {
@@ -125,6 +133,7 @@ header.is-opened {
 }
 
 footer {
+  display: none;
   padding-left: 10vw;
   padding-right: 10vw;
   padding-top: 10vh;
@@ -169,9 +178,6 @@ footer a:hover {
   text-align: right;
 }
 
-section {
-  display: none;
-}
 section h2 {
   font-size: 1.8em;
 }
