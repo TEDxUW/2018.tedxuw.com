@@ -44,14 +44,9 @@ nav ul img {
   left: 10px;
 }
 
-#home {
-  top: 25vh;
-}
-
 main {
   z-index: -1;
-  top: 25vh;
-  margin-bottom: 40vh !important;
+  margin-bottom: 15vh !important;
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -92,7 +87,6 @@ h2 {
 }
 
 header {
-  top: 0;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -136,7 +130,6 @@ footer {
   padding-left: 10vw;
   padding-right: 10vw;
   padding-top: 10vh;
-  padding-bottom: 2vh;
   color: white;
   background-color: #0d1831;
 }
@@ -173,12 +166,31 @@ footer a:hover {
   width: 180px;
 }
 
+#partners h2 {
+  margin-top: 50px;
+}
+#partners img {
+  filter: grayscale(100%);
+  transition: 0.2s;
+}
+#partners img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  filter: grayscale(0%);
+}
+
 #speakers .four {
   text-align: right;
 }
 
+section {
+  padding-top: 25vh;
+}
 section h2 {
   font-size: 1.8em;
+}
+section .header {
+  position: relative;
 }
 section .header-banner {
   background-color: #e1f5fe;
@@ -196,11 +208,11 @@ section .header-image {
 }
 
 .shape-overlays {
+  position: relative;
   width: 100vw;
-  margin-top: -5vh;
   height: 120vh;
   pointer-events: none;
-  top: 0;
+  top: -25vh;
   left: 0;
   transform: skewY(-5deg);
 }
