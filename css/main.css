@@ -45,14 +45,13 @@ nav ul img {
 }
 
 #home {
-  top: 20vh;
-  margin-bottom: 30vh !important;
+  top: 25vh;
 }
 
 main {
   z-index: -1;
-  top: 20vh;
-  margin-bottom: 30vh !important;
+  top: 25vh;
+  margin-bottom: 40vh !important;
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-timing-function: ease-in;

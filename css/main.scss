@@ -78,18 +78,16 @@ nav {
 }
 
 #home {
-  top: 20vh;
-  margin-bottom: 30vh !important;
+  top: 25vh;
 }
 
 main {
   z-index: -1;
-  top: 20vh;
-    margin-bottom: 30vh !important;
+  top: 25vh;
+  margin-bottom: 40vh !important;
   
   @include fadeIn(1s);
   section {
-
     display:none;
   }
 }
