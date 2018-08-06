@@ -33,11 +33,17 @@ nav ul li {
   margin-bottom: 12px;
 }
 nav ul li a {
+  transition: color 0.2s;
+  padding-bottom: 1px;
   color: white;
   text-decoration: none;
 }
 nav ul li a:hover {
   cursor: pointer;
+}
+nav ul li .is-active {
+  color: #E62B1E;
+  border-bottom: 2px solid #E62B1E;
 }
 nav ul #attend {
   background-color: #E62B1E;
@@ -53,7 +59,6 @@ nav ul img {
 
 main {
   z-index: -1;
-  margin-bottom: 15vh !important;
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-timing-function: ease-in;
@@ -71,7 +76,7 @@ main section {
 }
 
 body {
-  font-family: "Helvetica Light", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   min-height: 100vh;
   font-weight: lighter;
   -webkit-font-smoothing: antialiased;
@@ -81,7 +86,7 @@ body {
 }
 
 h1 {
-  font-family: "Futura", Avenir, sans-serif;
+  font-family: "Avenir Next", Avenir, sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -160,6 +165,10 @@ footer a:hover {
   cursor: pointer;
 }
 
+#partners .header, #faq .header {
+  padding-bottom: 10vh;
+}
+
 #team h2, #speakers h2 {
   padding-top: 50px;
   padding-bottom: 10px;
@@ -176,9 +185,6 @@ footer a:hover {
 
 #partners p {
   font-size: 20px;
-}
-#partners h2 {
-  margin-top: 50px;
 }
 #partners img:not(.header-title) {
   opacity: 0.8;

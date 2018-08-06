@@ -58,12 +58,19 @@ nav {
     li {
       margin: 0 30px;
       margin-bottom: 12px;
+
       a {
+        transition: color 0.2s;
+        padding-bottom: 1px;
         color: white;
         text-decoration: none;
       }
       a:hover {
         cursor: pointer;
+      }
+      .is-active {
+        color: $tedx-red;
+        border-bottom: 2px solid $tedx-red;
       }
     }
     #attend {
@@ -82,7 +89,6 @@ nav {
 
 main {
   z-index: -1;
-  margin-bottom: 15vh !important;
   @include fadeIn(1s);
   section {
     display:none;
@@ -90,7 +96,7 @@ main {
 }
 
 body {
-  font-family: 'Helvetica Light', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica', Helvetica, Arial, sans-serif;
   min-height: 100vh;
   font-weight: lighter;
   -webkit-font-smoothing: antialiased;
@@ -100,7 +106,7 @@ body {
 }
 
 h1 {
-  font-family: 'Futura', Avenir, sans-serif;
+  font-family: 'Avenir Next', Avenir, sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -180,6 +186,12 @@ footer {
   }
 }
 
+#partners, #faq {
+  .header {
+    padding-bottom: 10vh;
+  }
+}
+
 #team, #speakers {
   h2 {
     padding-top: 50px;
@@ -201,9 +213,6 @@ footer {
 #partners {
   p {
     font-size: 20px;
-  }
-  h2 {
-    margin-top:50px;
   }
   img:not(.header-title) {
     opacity: 0.8;

@@ -116,6 +116,8 @@ $(document).ready(function() {
   toggleWave();
   
   $('nav a, .pages a').click(function(event) {
+    $('nav a').removeClass();
+    $(event.currentTarget).addClass('is-active');
     $('html,body').animate({ scrollTop: 0 }, "fast");;
     $('section').fadeOut(200);
     $('footer').hide();
