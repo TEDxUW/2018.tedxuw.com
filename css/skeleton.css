@@ -50,7 +50,7 @@
 /* For devices larger than 550px */
 @media (min-width: 700px) {
   .container {
-    max-width: 800px; }
+    max-width: 960px; }
   .column,
   .columns {
     margin-left: 4%; }
