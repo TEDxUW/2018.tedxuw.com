@@ -128,6 +128,7 @@ $(document).ready(function() {
     console.log("hi");
     $('footer').fadeIn();
   });
+
   
 });
 

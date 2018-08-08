@@ -8,7 +8,7 @@ $path-fill-3: #30436f;
 $path-fill-4: black;
 $button-bg: #fff;
 $button-circle: #fff;
-$accent-blue: #b3e5fc;
+$accent-blue: #78C2FE;
 
 @mixin fadeIn($time) {
   animation-name: fadeIn;
@@ -29,7 +29,7 @@ $accent-blue: #b3e5fc;
   width: 100vw;
   position: absolute;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.08;
 }
 
 *,
@@ -73,11 +73,6 @@ nav {
         border-bottom: 2px solid $tedx-red;
       }
     }
-    #attend {
-      background-color: $tedx-red;
-      color: white !important;
-      padding: 5px 20px;
-    }
     img {
       height: 3em;
       position: absolute;
@@ -87,37 +82,48 @@ nav {
   }
 }
 
+#apply {
+  background-color: $tedx-red;
+  padding: 10px 20px;
+  color: white;
+}
+
 main {
   z-index: -1;
   @include fadeIn(1s);
   section {
-    display:none;
+    display: none;
   }
 }
 
 body {
-  font-family: 'Helvetica', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica', Avenir, Arial, sans-serif;
   min-height: 100vh;
   font-weight: lighter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-  color:white;
 }
 
 h1 {
-  font-family: 'Avenir Next', Avenir, sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
 h2 {
-  font-family: 'Avenir Next', Avenir, sans-serif;
   font-weight: bold;
 }
 
 p {
   font-size: 1em;
+}
+
+a {
+  transition: 0.2s;
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
+  color: $accent-blue;
 }
 
 header {
@@ -166,6 +172,9 @@ footer {
   padding-top:10vh;
   color: white;
   background-color: black;
+  a {
+    color:white;
+  }
   li {
     list-style: none;
   }
@@ -176,19 +185,17 @@ footer {
   .social a {
     font-weight: bold;
   }
-
-  a {
-    color:white;
-    text-decoration: none;
-  }
-  a:hover {
-    cursor: pointer;
-  }
 }
 
 #partners, #faq {
   .header {
     padding-bottom: 10vh;
+  }
+}
+
+#about, #speakers, #home {
+  .header-image {
+    box-shadow: 0 0 50px #b0bec5;
   }
 }
 
@@ -207,6 +214,7 @@ footer {
   img:not(.header-title) {
     position: relative;
     width: 180px;
+    box-shadow: 0 0 30px #eceff1;
   }
 }
 
@@ -214,12 +222,12 @@ footer {
   p {
     font-size: 20px;
   }
-  img:not(.header-title) {
+  img:not(.header-title, .accent) {
     opacity: 0.8;
     filter: grayscale(100%);
     transition: .2s;
   }
-  img:not(.header-title):hover {
+  img:not(.header-title, .accent):hover {
     opacity: 1;
     cursor: pointer;
     filter: grayscale(0%);
@@ -240,11 +248,13 @@ footer {
     position: relative;
     width: 100%;
     height: 250px;
+    box-shadow: 0 0 30px #b0bec5;
   }
 }
 
 section {
   padding-top: 25vh;
+  padding-bottom: 15vh;
   h2 {
     font-size: 1.8em;
   }
@@ -256,8 +266,9 @@ section {
     width:100%;
   }
   .header-banner {
-    background-color: $accent-blue;
+    background-color: #eee;
     color:black;
+    width: auto;
     padding: 20px 30px;
   }
 }

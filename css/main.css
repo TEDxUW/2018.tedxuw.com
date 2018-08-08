@@ -2,7 +2,7 @@
   width: 100vw;
   position: absolute;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.08;
 }
 
 *,
@@ -45,16 +45,17 @@ nav ul li .is-active {
   color: #E62B1E;
   border-bottom: 2px solid #E62B1E;
 }
-nav ul #attend {
-  background-color: #E62B1E;
-  color: white !important;
-  padding: 5px 20px;
-}
 nav ul img {
   height: 3em;
   position: absolute;
   top: 12px;
   left: 30px;
+}
+
+#apply {
+  background-color: #E62B1E;
+  padding: 10px 20px;
+  color: white;
 }
 
 main {
@@ -76,28 +77,34 @@ main section {
 }
 
 body {
-  font-family: "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica", Avenir, Arial, sans-serif;
   min-height: 100vh;
   font-weight: lighter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-  color: white;
 }
 
 h1 {
-  font-family: "Avenir Next", Avenir, sans-serif;
   font-weight: bold;
   letter-spacing: 1px;
 }
 
 h2 {
-  font-family: "Avenir Next", Avenir, sans-serif;
   font-weight: bold;
 }
 
 p {
   font-size: 1em;
+}
+
+a {
+  transition: 0.2s;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #78C2FE;
 }
 
 header {
@@ -147,6 +154,9 @@ footer {
   color: white;
   background-color: black;
 }
+footer a {
+  color: white;
+}
 footer li {
   list-style: none;
 }
@@ -157,16 +167,13 @@ footer .pages li {
 footer .social a {
   font-weight: bold;
 }
-footer a {
-  color: white;
-  text-decoration: none;
-}
-footer a:hover {
-  cursor: pointer;
-}
 
 #partners .header, #faq .header {
   padding-bottom: 10vh;
+}
+
+#about .header-image, #speakers .header-image, #home .header-image {
+  box-shadow: 0 0 50px #b0bec5;
 }
 
 #team h2, #speakers h2 {
@@ -181,17 +188,18 @@ footer a:hover {
 #team img:not(.header-title) {
   position: relative;
   width: 180px;
+  box-shadow: 0 0 30px #eceff1;
 }
 
 #partners p {
   font-size: 20px;
 }
-#partners img:not(.header-title) {
+#partners img:not(.header-title, .accent) {
   opacity: 0.8;
   filter: grayscale(100%);
   transition: 0.2s;
 }
-#partners img:not(.header-title):hover {
+#partners img:not(.header-title, .accent):hover {
   opacity: 1;
   cursor: pointer;
   filter: grayscale(0%);
@@ -210,10 +218,12 @@ footer a:hover {
   position: relative;
   width: 100%;
   height: 250px;
+  box-shadow: 0 0 30px #b0bec5;
 }
 
 section {
   padding-top: 25vh;
+  padding-bottom: 15vh;
 }
 section h2 {
   font-size: 1.8em;
@@ -226,8 +236,9 @@ section .header-image {
   width: 100%;
 }
 section .header-banner {
-  background-color: #b3e5fc;
+  background-color: #eee;
   color: black;
+  width: auto;
   padding: 20px 30px;
 }
 
