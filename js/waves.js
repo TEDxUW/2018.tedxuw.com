@@ -115,8 +115,8 @@ var toggleWave = function() {
 $(document).ready(function() {
   toggleWave();
   
-  $('nav a, .pages a').click(function(event) {
-    $('nav a').removeClass();
+  $('nav a:not(#logo), .pages a').click(function(event) {
+    $('nav a:not(#logo)').removeClass();
     $(event.currentTarget).addClass('is-active');
     $('html,body').animate({ scrollTop: 0 }, "fast");;
     $('section').fadeOut(200);
