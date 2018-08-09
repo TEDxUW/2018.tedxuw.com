@@ -2,9 +2,9 @@ $hero-back-color: white;
 $tedx-red: #E62B1E;
 $color-text: black;
 $color-hero: white;
-$path-fill-1: #dce3f1;
-$path-fill-2: #869ccc;
-$path-fill-3: #30436f;
+$path-fill-1: #DEF4FF;
+$path-fill-2: #70BDE6;
+$path-fill-3: #25455D; 
 $path-fill-4: black;
 $button-bg: #fff;
 $button-circle: #fff;
@@ -30,6 +30,8 @@ $accent-blue: #78C2FE;
   position: absolute;
   z-index: -1;
   opacity: 0.08;
+  overflow: hidden;
+  min-width: 100%;
 }
 
 *,
@@ -106,9 +108,12 @@ body {
 h1 {
   font-weight: bold;
   letter-spacing: 1px;
+  font-family: 'Avenir Next', Avenir, Arial, sans-serif;
 }
 
 h2 {
+  font-family: 'Avenir Next', Avenir, Arial, sans-serif;
+  letter-spacing: 0.5px;
   font-weight: bold;
 }
 
@@ -128,7 +133,7 @@ a:hover {
 
 header {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,14 +148,10 @@ header {
   h3 {
     opacity: 0.7;
     letter-spacing: 2px;
-    font-size: 30px;
-  }
-  h4 {
-    opacity: 0.7;
-    letter-spacing: 2.5px;
     font-size: 20px;
-    margin-top: 30px;
     font-weight: 600;
+    font-family: 'Avenir Next', Avenir, Arial, sans-serif;
+    margin-top: 20px;
   }
   img {
     height: 80px;
@@ -179,10 +180,22 @@ footer {
   }
   .pages li {
     font-weight: bold;
-    font-size: 18px;
   }
-  .social a {
-    font-weight: bold;
+  .social {
+    li {
+      margin-right: 20px;
+      display: inline;
+    }
+    img {
+      transition: 0.2s;
+      height: 25px;
+    }
+    img:hover {
+      opacity: 0.8;
+    }
+  }
+  .years li {
+    display:inline;
   }
 }
 
@@ -213,7 +226,6 @@ footer {
   img:not(.header-title) {
     position: relative;
     width: 180px;
-    box-shadow: 0 0 30px #eceff1;
   }
 }
 
@@ -252,8 +264,10 @@ footer {
 }
 
 section {
-  padding-top: 25vh;
-  padding-bottom: 15vh;
+  position: relative;
+  overflow: hidden;
+  padding-top: 20vh;
+  padding-bottom: 5vh;
   h2 {
     font-size: 1.8em;
   }
@@ -299,6 +313,7 @@ section {
 
 @media screen and (max-width: 700px) {
   nav {
+    display: none;
     ul {
       height: 70px;
         display: block;
@@ -309,6 +324,19 @@ section {
         }
     }
   }
-
+  header {
+    img {
+      height: 50px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+  }
+  section {
+    padding-top: 80px;
+  }
+  .header-title {
+    width: 70vw;
+  }
 }
 
