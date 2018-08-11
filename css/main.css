@@ -366,7 +366,7 @@ section .image {
   }
 
   header img {
-    height: 50px;
+    height: 60px !important;
   }
   header h3 {
     font-size: 18px;

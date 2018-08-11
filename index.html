@@ -530,7 +530,7 @@
         <script src="js/nav.js"></script>
         <script type="text/javascript">
 
-                $('nav a:not(#logo, .blog), .pages a').click(function(event) {
+                $('nav a:not(#logo, .blog, #apply), .pages a').click(function(event) {
                   $('nav a:not(#logo)').removeClass();
                   $(event.currentTarget).addClass('is-active');
                   $('html,body').animate({ scrollTop: 0 }, "fast");;
@@ -542,7 +542,7 @@
                   }
                 });
 
-                $('#mobile-nav').delegate('a:not(.blog)', 'click', function(event) {
+                $('#mobile-nav').delegate('a:not(.blog, #apply)', 'click', function(event) {
                     $('nav a:not(#logo)').removeClass();
                     $(event.currentTarget).addClass('is-active');
                     $('html,body').animate({ scrollTop: 0 }, "fast");;
