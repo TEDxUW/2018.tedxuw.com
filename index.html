@@ -20,24 +20,29 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/skeleton.css" />
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
-        
 		<script>document.documentElement.className = 'js';</script>
 	</head>
 	<body class="preload">
 	    <nav>
 	      <ul>
 	        <li><a href="" id="logo"><img src="images/logo_white.png"/></a></li>
-	        <span></span>
-	        <li><a name="about">About</a></li>
-	        <li><a name="speakers">Speakers</a></li>
-	        <li><a name="partners">Partners</a></li>
-            <li><a href="https://tedxuw.blogspot.com/">Blog</a></li>
-        	<li><a name="faq">FAQ</a></li>
-            <li><a id="apply" name="faq">Apply</a></li>
+	        <span class="nav-spacer"></span>
+            <span class="nav-items" id="menu">
+    	        <li><a name="about">About</a></li>
+    	        <li><a name="speakers">Speakers</a></li>
+    	        <li><a name="partners">Partners</a></li>
+                <li><a class="blog" target="_blank" href="https://medium.com/@tedx_uw">Blog</a></li>
+            	<li><a name="faq">FAQ</a></li>
+                <li><a id="apply" name="faq">Apply</a></li>
+             </span>
+             <span id="nav-icon"></span>
 	      </ul>
+          <span id="mobile-nav"></span>
+          
 	    </nav>
-        <section id="hero" style="padding-bottom:0">
+        <section id="hero" style="margin-bottom:0; padding-bottom:0">
             <header>
+                <img id="back" src="images/back.jpg"/>
                 <h3>OCT 13. 2018</h3>
                     <div align="center">
                         <img style="margin-right:2vw" src="images/headers/making.svg"/>
@@ -45,33 +50,39 @@
                     </div>
                  <h3>HAGEY HALL, UNIVERSITY OF WATERLOO</h3>
             </header>
-            <svg class="shape-overlays" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <svg class="shape-overlays" style="background-color:black;" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path class="shape-overlays__path"></path>
                 <path class="shape-overlays__path"></path>
                 <path class="shape-overlays__path"></path>
                 <path class="shape-overlays__path"></path>
             </svg>
         </section>
-        <section id="home" class="container" style="padding-bottom:15vh">
-            <div class="row">
-                <div class="seven columns">
-                    <h1>TEDxUW is Back!</h1>
-                    <p>NEED CONTENT (MINI DESCRIPTION)</p>
-                    <h5 style="margin-bottom:25px"><b>Applications for TEDxUW are now open.</b></h5>
-                    <a style="font-weight:bold; font-size: 20px;" id="apply">Apply to be a delegate</a>
+        <section id="home" style="padding-bottom:15vh; padding-top: 0">
+            <img class="accent" style="top:15em;" src="images/accent2.svg"/>
+            <div class="container">
+                <div class="row">
+                    <div class="four columns">
+                        <img class="header-image" src="images/hero.jpg"/>
+                    </div>
+                    <div class="eight columns" style="padding:50px">
+                        <h1>TEDxUW is Back!</h1>
+                        <p>
+                            Thank you for joining us for another edition of TEDxUW. We’re going strong into our 8th consecutive year of showcasing some of the most insightful, creative, and amazing individuals from the Waterloo community.
+                        </p>
+                        <h5 style="margin-bottom:25px"><b>Applications for TEDxUW are now open.</b></h5>
+                        <a style="font-weight:bold; font-size: 20px;" id="apply">Apply to be a delegate</a>
+                    </div>
+                    
+                    <br/><br/>
                 </div>
-                <div class="five columns">
-                    <img class="header-image" src="images/speaker.jpg"/>
-                </div>
-                <br/><br/>
-
             </div>
         </section>
     	<main>
             <div class="container"></div>
     		<section id="about">
-                <img class="accent" style="left:0; top:27em; width:120em" src="images/accent2.svg"/>
-                <img class="accent" style="left:0; top:80em; width:100em" src="images/accent1.svg"/>
+                <img class="accent" style="top:28em;" src="images/accent2.svg"/>
+                <img class="accent" style="top:60em;" src="images/accent1.svg"/>
+                <img class="accent" style="top:170em;" src="images/accent1.svg"/>
                 <div class="container" style="padding-bottom: 15vh">
                     <div class="row">
                         <div class="five columns" align="left">
@@ -80,22 +91,31 @@
                             <div>
                                 Founded in 2011, TEDxUW is the University of Waterloo's official TEDx experience. It is one in a series of 3,000+ events being held worldwide as part of the international TED movement to create open platforms for riveting ideas to be shared with the world.
                                 <br/><br/>
-                                NEED CONTENT (JOIN US...)
+                                With TEDxUW talks published on <a href="https://www.ted.com/">TED.com</a> and ammassing over 5 million views on YouTube and other websites, TEDxUW continually triggers innovation in all corners of the globe beyond our conference date.
                             </div>
                         </div>
                         <div class="seven columns">
-                            <img class="header-image" src="images/speaker.jpg" />
+                            <img class="header-image" src="images/about3.jpg" />
                         </div>
                     </div>
                     <br/><br/><br/>
-                    <h2>TEDxUW Theme: MAKING WAVES</h2>
+                    <h2>2018 Theme: MAKING WAVES</h2>
                     <p>
-                        NEED CONTENT (ABOUT THE THEME)
+                        This year, TEDxUW is showcasing individuals within the Waterloo community who go beyond simply expressing an idea and are actively make them a reality. In a variety of fields and interests, they’re shaking things up. We call them the wave-makers. In honor of that spirit, the theme for TEDxUW this year is Making Waves</b>.
                     </p>
+                    <br/>
+                    <div class="row">
+                        <div class="six columns">
+                            <img class="image" src="images/about5.jpg" width="" />
+                        </div>
+                        <div class="six columns">
+                            <img class="image" src="images/about4.jpg" width="" />
+                        </div>
+                    </div>
                     <br/><br/>
+                    <br/><br/><br/>
                     <div id="team">     
                         <img class="header-title" src="images/headers/team.svg" />
-                        <h5>NEED CONTENT (DESCRIPTION OF TEAM)</h5>
                         <h2>Co-Chairs</h2>
                         <div class="row">
                             <div class="three columns">
@@ -199,9 +219,9 @@
                                 <div class="title">Internal Marketing Director</div>
                             </div>
                             <div class="three columns">
-                                <img src="images/team/qw.jpg"/>
-                                <div class="name">Queenie Wu</div>
-                                <div class="title">Brand Manager</div>
+                                <img src="images/team/as.jpg"/>
+                                <div class="name">Akanksha Sharma</div>
+                                <div class="title">Content Manager</div>
                             </div>
                             <div class="three columns">
                                 <img src="images/team/dc.jpg"/>
@@ -209,17 +229,17 @@
                                 <div class="title">Web and UX Manager</div>
                             </div>
                             <div class="three columns">
-                                <img src="images/team/as.jpg"/>
-                                <div class="name">Akanksha Sharma</div>
-                                <div class="title">Content Manager</div>
+                                <img src="images/team/ko.jpg"/>
+                                <div class="name">Krystyna Oakman</div>
+                                <div class="title">Graphic Designer</div>
                             </div>
                         </div>
                         <br/>
                         <div class="row">
                             <div class="three columns">
-                                <img src="images/team/ko.jpg"/>
-                                <div class="name">Krystyna Oakman</div>
-                                <div class="title">Graphic Designer</div>
+                                <img src="images/team/qw.jpg"/>
+                                <div class="name">Queenie Wu</div>
+                                <div class="title">Brand Manager</div>
                             </div>
                         </div>
                     </div>
@@ -231,15 +251,17 @@
                 <img class="accent" style="left:0; top:50em; width:100em;" src="images/accent1.svg"/>
 
                 <div class="container">
-                    <div class="header row">
-                        <div class="six columns">
+                    <div class="header row" align="right">
+                        <div class="seven columns">
                             <img class="header-image" src="images/speaker.jpg" />
                         </div>
-                        <div class="six columns">
+                        <div class="five columns">
                             <img class="header-title" src="images/headers/speakers.svg" />
                             <br/><br/>
                             <div>
-                                NEED CONTENT (SPEAKERS)
+                                This year, TEDxUW is showcasing individuals within the Waterloo community who go beyond simply expressing an idea and are actively make them a reality. In a variety of fields and interests, they’re shaking things up. We call them the wave-makers.
+                                <br/><br/>
+                                Stay tuned for the big introduction!
                             </div>
                         </div>
                     </div>
@@ -392,7 +414,6 @@
             </section>
 
             <section id="faq">
-
                 <div class="container">
                     <img class="header-title" src="images/headers/faq.svg" />
                     <br/><br/><br/>
@@ -461,19 +482,42 @@
                         <li><a name="about">About</a></li>
                         <li><a name="speakers">Speakers</a></li>
                         <li><a name="partners">Partners</a></li>
-                        <li><a href="https://tedxuw.blogspot.com/">Blog</a></li>
+                        <li><a target="_blank" href="https://medium.com/@tedx_uw">Blog</a></li>
                         <li><a name="faq">FAQ</a></li>
                    </ul>
                </div>
                <div class="five columns">
-                        <div style="margin-bottom:7px"><b>Past Sites</b></div>
-<a href="https://tedxuw.github.io/2017/" target="_blank">2017</a> &emsp; <a href="https://tedxuw.github.io/2016/" target="_blank">2016</a> &emsp; <a href="http://2015.tedxuw.com/" target="_blank">2015</a> &emsp; <a href="http://2014.tedxuw.com/" target="_blank">2014</a> &emsp; <a href="http://2012.tedxuw.com/" target="_blank">2012</a>
-               </div>
+                    <div style="margin-bottom:7px"><b>Past Sites</b></div>
+                    <a href="http://2012.tedxuw.com/" target="_blank">2012</a>
+                    &emsp;
+                    <a href="http://2014.tedxuw.com/" target="_blank">2014</a>
+                    &emsp;
+                    <a href="http://2015.tedxuw.com/" target="_blank">2015</a>
+                    &emsp;
+                    <a href="https://tedxuw.github.io/2016/" target="_blank">2016</a> 
+                    &emsp; 
+                    <a href="https://tedxuw.github.io/2017/" target="_blank">2017</a>  
+                    
+                    <div style="margin-bottom:7px; margin-top: 35px;"><b>Sign up for our newsletter</b></div>
+                    <div id="mc_embed_signup">
+                    <form action="https://tedxuw.us16.list-manage.com/subscribe/post?u=77685316543b00e0131d233fc&amp;id=3072f2426c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
+                        <div id="mc_embed_signup_scroll">
+                        
+                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_77685316543b00e0131d233fc_3072f2426c" tabindex="-1" value=""></div>
+
+                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                        </div>
+                    </form>
+                    </div>
+                </div>
            </div> 
            <hr/>
            <span>© TEDxUW 2018</span><span style="float:right; font-size: 12px">Site created by <b>Derrek Chow</b> and designed by <b>Queenie Wu</b></span>
            <br/><br/><br/>
         </footer>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollmonitor/1.2.0/scrollMonitor.js"></script>
     	<script
           src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -481,6 +525,35 @@
           crossorigin="anonymous"></script>
     	<script src="js/anime.min.js"></script>
     	<script src="js/easings.js"></script>
-		<script src="js/waves.js"></script>
+        
+        <script src="js/waves.js"></script>
+        <script src="js/nav.js"></script>
+        <script type="text/javascript">
+
+                $('nav a:not(#logo, .blog), .pages a').click(function(event) {
+                  $('nav a:not(#logo)').removeClass();
+                  $(event.currentTarget).addClass('is-active');
+                  $('html,body').animate({ scrollTop: 0 }, "fast");;
+                  $('section').fadeOut(200);
+                  $('footer').hide();
+                  $('#' + event.currentTarget.name).delay(200).fadeIn(400);
+                  if($('#toggle').is(':visible')) {
+                    $('.nav-items').slideUp();
+                  }
+                });
+
+                $('#mobile-nav').delegate('a:not(.blog)', 'click', function(event) {
+                    $('nav a:not(#logo)').removeClass();
+                    $(event.currentTarget).addClass('is-active');
+                    $('html,body').animate({ scrollTop: 0 }, "fast");;
+                    $('section').fadeOut(200);
+                    $('footer').hide();
+                    $('#' + event.currentTarget.name).delay(200).fadeIn(400);
+                    $('.nav-items').slideUp();
+                })
+            
+        </script>
+
+        
 		</body>
 </html>

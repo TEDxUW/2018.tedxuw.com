@@ -2,7 +2,7 @@
   width: 100vw;
   position: absolute;
   z-index: -1;
-  opacity: 0.08;
+  opacity: 0.1;
   overflow: hidden;
   min-width: 100%;
 }
@@ -13,23 +13,31 @@
   box-sizing: border-box;
 }
 
-nav ul {
+nav {
+  position: fixed;
+  width: 100%;
   z-index: 2;
+  padding: 0;
+}
+nav ul {
   font-weight: 600;
   display: flex;
   padding-right: 10px;
   list-style: none;
-  align-items: center;
   font-size: 13px;
-  position: fixed;
-  width: 100%;
   padding-top: 10px;
   background-color: black;
   height: 5em;
   text-align: center;
 }
-nav ul span {
+nav ul .nav-spacer {
   flex: 5;
+}
+nav ul .nav-items {
+  flex-direction: row;
+  width: 60%;
+  display: flex;
+  align-items: center;
 }
 nav ul li {
   flex: 1 1 auto;
@@ -50,7 +58,7 @@ nav ul li .is-active {
 }
 nav ul img {
   height: 3em;
-  margin-top: 10px;
+  margin-top: 3px;
   flex: 1;
 }
 
@@ -58,6 +66,10 @@ nav ul img {
   background-color: #E62B1E;
   padding: 10px 20px;
   color: white;
+}
+
+#apply:hover {
+  text-decoration: underline;
 }
 
 main {
@@ -98,6 +110,11 @@ h2 {
   font-weight: bold;
 }
 
+h4 {
+  opacity: 0.3;
+  font-weight: bold;
+}
+
 p {
   font-size: 1em;
 }
@@ -128,6 +145,18 @@ header {
   z-index: 1;
   opacity: 0;
 }
+header #back {
+  animation-name: fadeIn;
+  width: 100vw;
+  height: 120vh;
+  position: absolute;
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  filter: blur(2px);
+  overflow: hidden;
+  opacity: 0.4;
+  z-index: -1;
+}
 header h3 {
   opacity: 0.7;
   letter-spacing: 2px;
@@ -136,7 +165,7 @@ header h3 {
   font-family: "Avenir Next", Avenir, Arial, sans-serif;
   margin-top: 20px;
 }
-header img {
+header img:not(#back) {
   height: 80px;
 }
 
@@ -234,8 +263,8 @@ footer .years li {
 section {
   position: relative;
   overflow: hidden;
-  padding-top: 20vh;
-  padding-bottom: 5vh;
+  padding-top: 25vh;
+  padding-bottom: 15vh;
 }
 section h2 {
   font-size: 1.8em;
@@ -252,6 +281,11 @@ section .header-banner {
   color: black;
   width: auto;
   padding: 20px 30px;
+}
+section .image {
+  position: relative;
+  width: 100%;
+  box-shadow: 0 0 50px #b0bec5;
 }
 
 .shape-overlays {
@@ -279,18 +313,56 @@ section .header-banner {
   fill: black;
 }
 
+#mce-EMAIL {
+  color: black;
+  padding-top: 2px;
+}
+
+#mc-embedded-subscribe-form input {
+  border-radius: 0;
+}
+
+#mc-embedded-subscribe {
+  color: white;
+  background-color: #E62B1E;
+  border: none;
+}
+
+.slicknav_menu {
+  display: none;
+  background-color: black;
+  margin-top: -50px;
+  padding: 10px 0;
+  text-align: center;
+}
+.slicknav_menu li {
+  margin: 30px 0 !important;
+}
+.slicknav_menu li a {
+  color: white;
+  font-weight: bold;
+}
+.slicknav_menu li .is-active {
+  color: #E62B1E;
+  border-bottom: 2px solid #E62B1E;
+}
+
+#nav-icon {
+  display: none;
+  margin-right: 20px;
+}
+
 @media screen and (max-width: 700px) {
-  nav {
+  .js #menu {
     display: none;
   }
-  nav ul {
-    height: 70px;
+
+  #nav-icon {
     display: block;
-    text-align: left;
-    margin-top: -5px;
   }
-  nav ul a {
-    margin-left: 30px;
+
+  .js .slicknav_menu {
+    display: block;
   }
 
   header img {
@@ -301,11 +373,26 @@ section .header-banner {
   }
 
   section {
-    padding-top: 80px;
+    padding-top: 110px;
+  }
+
+  #partners img {
+    max-width: 80%;
+    height: auto;
   }
 
   .header-title {
     width: 70vw;
+    max-width: 300px;
+    height: auto !important;
+  }
+
+  .header-image {
+    margin: 40px 0;
+  }
+
+  .pages {
+    margin: 40px 0;
   }
 }
 

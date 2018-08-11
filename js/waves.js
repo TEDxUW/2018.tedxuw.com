@@ -113,22 +113,12 @@ var toggleWave = function() {
 }
 
 $(document).ready(function() {
+  $('#menu').slicknav();
   toggleWave();
-  
-  $('nav a:not(#logo), .pages a').click(function(event) {
-    $('nav a:not(#logo)').removeClass();
-    $(event.currentTarget).addClass('is-active');
-    $('html,body').animate({ scrollTop: 0 }, "fast");;
-    $('section').fadeOut(200);
-    $('footer').hide();
-    $('#' + event.currentTarget.name).delay(200).fadeIn(400);
-  });
 
   footer_trigger.enterViewport(function() {
-    console.log("hi");
     $('footer').fadeIn();
   });
-
   
 });
 
