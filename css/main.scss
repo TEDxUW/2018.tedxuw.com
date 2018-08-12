@@ -96,7 +96,7 @@ nav {
 }
 
 #apply:hover {
-  text-decoration: underline;
+  box-shadow: 0 0 5px #25455D;
 }
 
 main {
@@ -129,7 +129,6 @@ h2 {
 
 h4 {
   opacity: 0.3;
-  font-weight: bold;
 }
 
 p {
@@ -156,7 +155,7 @@ header {
     -moz-filter: blur(2px);
     filter: blur(2px);
     overflow: hidden;
-    opacity: 0.4;
+    opacity: 0.25;
     z-index: -1;
   }
   width: 100vw;
@@ -352,7 +351,7 @@ section {
 }
 #mc-embedded-subscribe {
     color:white;
-    background-color: #E62B1E;
+    background-color: $tedx-red;
     border:none;
 }
 
