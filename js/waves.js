@@ -14,7 +14,7 @@ class ShapeOverlays {
     this.elm = elm;
     this.path = elm.querySelectorAll('path');
     this.numPoints = 3;
-    this.duration = 800;
+    this.duration = 1000;
     this.delayPointsArray = [];
     this.delayPointsMax = 100;
     this.delayPerPath = 80;
@@ -112,7 +112,7 @@ var toggleWave = function() {
 
 $(document).ready(function() {
   $('#menu').slicknav();
-  toggleWave();
+  setTimeout(toggleWave, 500);
 
   footer_trigger.enterViewport(function() {
     $('footer').fadeIn();
