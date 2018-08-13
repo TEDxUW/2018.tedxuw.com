@@ -548,18 +548,16 @@
            <br/><br/><br/>
         </footer>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollmonitor/1.2.0/scrollMonitor.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollmonitor/1.2.0/scrollMonitor.js" async></script>
     	<script
           src="https://code.jquery.com/jquery-3.3.1.min.js"
           integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
           crossorigin="anonymous"></script>
-    	<script src="js/anime.min.js"></script>
     	<script src="js/easings.js"></script>
         
         <script src="js/waves.js"></script>
         <script src="js/nav.js"></script>
         <script type="text/javascript">
-
                 $('nav a:not(#logo, .blog, #apply), .pages a').click(function(event) {
                   $('nav a:not(#logo)').removeClass();
                   $(event.currentTarget).addClass('is-active');
@@ -580,8 +578,7 @@
                     $('footer').hide();
                     $('#' + event.currentTarget.name).delay(200).fadeIn(400);
                     $('.nav-items').slideUp();
-                })
-            
+                });
         </script>
 
         
