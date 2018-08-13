@@ -148,7 +148,6 @@ a:hover {
 
 header {
   #back {
-    animation-name: fadeIn;
     width: 100vw;
     height: 120vh;
     position: absolute;
@@ -319,6 +318,7 @@ section {
 }
 
 .shape-overlays {
+
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -329,14 +329,17 @@ section {
 
 .shape-overlays__path:nth-of-type(1) {
   fill: $path-fill-1;
+  @include fadeIn(0.5s);
 }
 
 .shape-overlays__path:nth-of-type(2) {
   fill: $path-fill-2;
+  @include fadeIn(1s);
 }
 
 .shape-overlays__path:nth-of-type(3) {
   fill: $path-fill-3;
+  @include fadeIn(1s);
 }
 
 .shape-overlays__path:nth-of-type(4) {

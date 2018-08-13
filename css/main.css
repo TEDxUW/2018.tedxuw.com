@@ -146,7 +146,6 @@ header {
   opacity: 0;
 }
 header #back {
-  animation-name: fadeIn;
   width: 100vw;
   height: 120vh;
   position: absolute;
@@ -299,14 +298,47 @@ section .image {
 
 .shape-overlays__path:nth-of-type(1) {
   fill: #DEF4FF;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .shape-overlays__path:nth-of-type(2) {
   fill: #70BDE6;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .shape-overlays__path:nth-of-type(3) {
   fill: #25455D;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .shape-overlays__path:nth-of-type(4) {

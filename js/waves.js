@@ -98,8 +98,6 @@ const hero = document.querySelector('header');
 const elmOverlay = document.querySelector('.shape-overlays');
 var overlay = new ShapeOverlays(elmOverlay);
 
-setTimeout(() => document.querySelector('.preload').classList.add('render'), 800);
-
 var toggleWave = function() {
   if (overlay.isAnimating) {
     return false;
