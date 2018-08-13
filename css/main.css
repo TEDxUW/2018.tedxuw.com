@@ -338,10 +338,10 @@ section .image {
     display: block;
   }
 
-  header img {
-    height: 60px !important;
+  #hero img {
+    max-width: 80vw;
   }
-  header h3 {
+  #hero h3 {
     font-size: 18px;
   }
 
