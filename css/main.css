@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3%, 0);
+  }
+  to {
+    opacity: auto;
+    transform: none;
+  }
+}
 .accent {
   width: 100vw;
   position: absolute;
@@ -74,17 +84,6 @@ nav ul img {
 
 main {
   z-index: -1;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-timing-function: ease-in;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 main section {
   display: none;
@@ -130,22 +129,23 @@ a:hover {
   color: #78C2FE;
 }
 
-header {
+#hero {
+  background-color: black;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 0;
   text-align: center;
-  position: absolute;
   flex-direction: column;
   top: 0;
   left: 0;
   color: white;
   z-index: 1;
-  opacity: 0;
 }
-header #back {
+#hero #back {
+  animation-name: fadeIn;
+  animation-duration: 1s;
   width: 100vw;
   height: 120vh;
   position: absolute;
@@ -156,23 +156,22 @@ header #back {
   opacity: 0.25;
   z-index: -1;
 }
-header h3 {
+#hero h3 {
   opacity: 0.7;
   letter-spacing: 2px;
   font-size: 20px;
   font-weight: 600;
   font-family: "Avenir Next", Avenir, Arial, sans-serif;
   margin-top: 20px;
-}
-header img:not(#back) {
-  height: 80px;
-}
-
-header.is-opened {
-  opacity: 1;
-  transition: opacity 0.3s;
-  transition-delay: 0.5s;
+  animation-name: fadeIn;
   transition-timing-function: ease-out;
+  animation-duration: 2s;
+}
+#hero img:not(#back) {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  transition-timing-function: ease-out;
+  height: 80px;
 }
 
 footer {
@@ -285,64 +284,6 @@ section .image {
   position: relative;
   width: 100%;
   box-shadow: 0 0 50px #b0bec5;
-}
-
-.shape-overlays {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  top: -20vh;
-  left: 0;
-}
-
-.shape-overlays__path:nth-of-type(1) {
-  fill: #DEF4FF;
-  animation-name: fadeIn;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.shape-overlays__path:nth-of-type(2) {
-  fill: #70BDE6;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-timing-function: ease-in;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.shape-overlays__path:nth-of-type(3) {
-  fill: #25455D;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-timing-function: ease-in;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.shape-overlays__path:nth-of-type(4) {
-  fill: black;
 }
 
 #mce-EMAIL {
