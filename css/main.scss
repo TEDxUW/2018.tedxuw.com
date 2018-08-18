@@ -246,7 +246,7 @@ footer {
 }
 
 #team {
-  img:not(.header-title) {
+  img:not(.header-image) {
     position: relative;
     width: 180px;
   }
@@ -275,14 +275,23 @@ footer {
   .title {
     font-size: 18px;
   }
-  .four {
-    text-align: right;
+  .name {
+    font-size: 20px;
   }
   iframe {
     position: relative;
     width: 100%;
     height: 250px;
     box-shadow: 0 0 30px #b0bec5;
+  }
+  .speakers {
+    img {
+      position: relative;
+      width:250px;
+    }
+  }
+  .row {
+    margin-bottom:70px;
   }
 }
 

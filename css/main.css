@@ -90,6 +90,7 @@ main section {
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Helvetica", Avenir, Arial, sans-serif;
   min-height: 100vh;
   font-weight: lighter;
@@ -223,7 +224,7 @@ footer .years li {
   font-weight: bold;
 }
 
-#team img:not(.header-title) {
+#team img:not(.header-image) {
   position: relative;
   width: 180px;
 }
@@ -248,14 +249,21 @@ footer .years li {
 #speakers .title {
   font-size: 18px;
 }
-#speakers .four {
-  text-align: right;
+#speakers .name {
+  font-size: 20px;
 }
 #speakers iframe {
   position: relative;
   width: 100%;
   height: 250px;
   box-shadow: 0 0 30px #b0bec5;
+}
+#speakers .speakers img {
+  position: relative;
+  width: 250px;
+}
+#speakers .row {
+  margin-bottom: 70px;
 }
 
 section {
