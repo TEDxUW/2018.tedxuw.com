@@ -256,15 +256,14 @@ footer {
   p {
     font-size: 20px;
   }
-  img:not(.header-title, .accent) {
+  img:not(.header-title) {
     opacity: 0.8;
-    filter: grayscale(100%);
     transition: .2s;
+    margin: 50px;
   }
-  img:not(.header-title, .accent):hover {
+  img:not(.header-title):hover {
     opacity: 1;
     cursor: pointer;
-    filter: grayscale(0%);
   }
   hr {
     margin: 60px 0;
