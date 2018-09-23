@@ -271,11 +271,8 @@ footer {
 }
 
 #speakers {
-  .title {
+  .title, .name {
     font-size: 18px;
-  }
-  .name {
-    font-size: 20px;
   }
   iframe {
     position: relative;
