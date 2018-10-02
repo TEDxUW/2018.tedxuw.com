@@ -233,7 +233,7 @@ footer .years li {
   font-size: 20px;
 }
 #partners img:not(.header-title) {
-  opacity: 0.8;
+  opacity: 0.7;
   transition: 0.2s;
   margin: 50px;
 }
