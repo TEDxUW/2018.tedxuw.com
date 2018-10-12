@@ -57,7 +57,7 @@ nav {
     }
     .nav-items {
       flex-direction: row;
-      width: 60%;
+      width: 50%;
       display: flex;
       align-items: center;
     }
@@ -186,6 +186,10 @@ a:hover {
     transition-timing-function: ease-out;
     height: 80px;
   }
+}
+
+#schedule, #map {
+  width:80%;
 }
 
 footer {

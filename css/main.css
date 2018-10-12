@@ -45,7 +45,7 @@ nav ul .nav-spacer {
 }
 nav ul .nav-items {
   flex-direction: row;
-  width: 60%;
+  width: 50%;
   display: flex;
   align-items: center;
 }
@@ -175,6 +175,10 @@ a:hover {
   height: 80px;
 }
 
+#schedule, #map {
+  width: 80%;
+}
+
 footer {
   display: none;
   padding-left: 10vw;
@@ -233,7 +237,7 @@ footer .years li {
   font-size: 20px;
 }
 #partners img:not(.header-title) {
-  opacity: 0.7;
+  opacity: 0.8;
   transition: 0.2s;
   margin: 50px;
 }
@@ -245,10 +249,7 @@ footer .years li {
   margin: 60px 0;
 }
 
-#speakers .title {
-  font-size: 18px;
-}
-#speakers .name {
+#speakers .title, #speakers .name {
   font-size: 18px;
 }
 #speakers iframe {
